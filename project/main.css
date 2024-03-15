@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: 'Poppins';
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.scroll-timeline {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 10px;
+  background-color: rgb(0, 84, 80);
+  z-index: 9999;
+  transform-origin: left;
+}
+
+[data-aos='reviewWrapperEl'] {
+  opacity: 0;
+  transform: translateY(40%);
+  transition-property: transform, opacity;
+  transition-delay: 300ms;
+  transition-duration: 800ms;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(9, 114, 109);
+}
+/* CSS Per Header */
+header {
+  position: fixed;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background-color: #fff;
+  z-index: 9998;
+  border-bottom: 2px solid rgb(0, 84, 80);
+  transition: all 0.3s ease;
+}
+
+header .btn_wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+header .btn_wrapper a {
+  background: none;
+  border: 1px solid lightgray;
+  padding: 7px 15px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+header .btn_wrapper a:hover {
+  padding: 7px 20px;
+  background-color: rgb(228, 245, 245);
+  border-color: rgb(9, 114, 109);
+}
+
+header .nav_bar {
+  display: flex;
+}
+
+header .nav_bar .logo {
+  color: rgb(0, 84, 80);
+  font-family: 'Times New Roman';
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+header .nav_bar .logo a {
+  padding: 20px 25px;
+}
+
+header .nav_bar .logo i {
+  border-radius: 50%;
+  background-color: rgb(0, 84, 80);
+  color: #fff;
+  padding: 8px;
+}
+
+header .nav_bar ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.1rem;
+  list-style: none;
+}
+
+header .nav_bar ul a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+header .nav_bar ul a:hover {
+  background-color: rgb(228, 245, 245);
+  color: rgb(9, 114, 109);
+}
+
+/* CSS Per Container / Hero */
+.container .hero {
+  min-height: 80svh;
+  display: flex;
+}
+
+.container .hero > * {
+  flex: 1;
+}
+
+.container .hero div:nth-child(1) {
+  background-color: rgb(0, 84, 80);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.container .hero .hero-title {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.container .hero .hero-description {
+  margin-top: 20px;
+  max-width: 40ch;
+  font-weight: 600;
+}
+
+.container .hero .hero-btn-wrapper {
+  margin-top: 30px;
+}
+
+.container .hero .hero-btn-wrapper .hero-btn {
+  background: none;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #fec676;
+  padding: 15px 30px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  color: rgb(0, 84, 80);
+  transition: background-color 0.3s ease;
+}
+
+.container .hero .hero-btn-wrapper .hero-btn:hover {
+  background-color: #ffab39;
+}
+
+.container .hero .hero-btn-wrapper .hero-btn-description {
+  opacity: 0.9;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.container div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CSS Per .explore dhe .reviews*/
+
+.container .explore,
+.container .reviews > div:first-child {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.container .explore span,
+.container .reviews > div:first-child span {
+  background-color: rgb(228, 245, 245);
+  color: rgb(0, 84, 80);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.container .explore p,
+.container .reviews > div:first-child p {
+  max-width: 60ch;
+  text-align: center;
+}
+
+.container .explore div {
+  display: flex;
+  gap: 10px;
+}
+
+.container .explore div .btn-1 {
+  background-color: rgb(9, 114, 109);
+  color: #fff;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.container .explore div .btn-1:hover {
+  background-color: rgb(0, 84, 80);
+}
+
+.container .explore div .btn-2,
+.container .reviews div:first-child .btn-2 {
+  color: rgb(0, 84, 80);
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.15s ease;
+}
+
+.container .explore div .btn-2:hover,
+.container .reviews div:first-child .btn-2:hover {
+  background-color: rgb(228, 245, 245);
+}
+
+/* CSS Per .job */
+
+.container .job {
+  padding: 100px 125px 25px 125px;
+}
+
+.container .job .job-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 5px;
+}
+
+.container .job .job-card-wrapper .job-date {
+  padding: 3px 5px;
+  font-size: 13px;
+  border-radius: 5px;
+  background-color: rgb(228, 245, 245);
+  color: rgb(0, 84, 80);
+  white-space: nowrap;
+}
+
+.container .job .job-card-wrapper .job-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.container .job .job-card-wrapper .job-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid gray;
+}
+
+.container .job hr {
+  color: gray;
+}
+
+.container .job .job-card-wrapper .job-card .job-desc-wrapper {
+  color: gray;
+}
+
+.container .job .job-card-wrapper .job-card .job-desc-wrapper h5,
+.container .job .job-card-wrapper .job-card .job-desc-wrapper p {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+}
+
+/* CSS per .review-grid */
+
+.container .reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .reviews .review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 1100px;
+  gap: 20px;
+  margin: 60px 0;
+}
+
+.container .reviews .review-grid .review-wrapper {
+  padding: 32px;
+  background-color: rgba(0, 0, 0, 0.025);
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.container .reviews .review-grid .review-wrapper p {
+  font-size: 13px;
+  color: #616161;
+}
+
+.container .reviews .review-grid .review-wrapper p span {
+  font-weight: 600;
+  color: #333;
+}
+
+.container
+  .reviews
+  .review-grid
+  .review-wrapper
+  .review-poster-wrapper
+  .review-poster {
+  margin-top: 20px;
+  color: #333;
+}
+
+.container
+  .reviews
+  .review-grid
+  .review-wrapper
+  .review-poster-wrapper
+  .review-poster-position {
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 1100px) {
+  /* Header Responsive */
+  .scroll-timeline {
+    height: 5px;
+  }
+  header .nav_bar .logo {
+    padding: 13px 15px;
+    font-size: 17px;
+  }
+  header .nav_bar ul {
+    gap: 10px;
+  }
+  header .nav_bar ul li a {
+    font-size: 13px;
+    padding: 5px;
+  }
+  header .btn_wrapper a {
+    font-size: 11px !important;
+    padding: 5px 10px;
+  }
+  header .btn_wrapper a:hover {
+    padding: 5px 15px;
+  }
+  /* Hero Responsive */
+  .container .hero .hero-title {
+    font-size: 3rem;
+  }
+  .container .hero .hero-description {
+    font-size: 13px;
+  }
+  .container .hero .hero-btn-wrapper .hero-btn {
+    font-size: 13px;
+  }
+  /* Explore Respnsive */
+  .container .explore span {
+    font-size: 12px;
+  }
+  .container .explore h1 {
+    font-size: 25px;
+  }
+  .container .explore p {
+    font-size: 13px;
+  }
+  .container .explore .explore-btn-wrapper {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .explore .explore-btn-wrapper button {
+    font-size: 15px;
+  }
+  /* Jobs Responsive */
+  .container .job .job-card-wrapper {
+    padding: 15px;
+  }
+  .container .job .job-card-wrapper .job-card img {
+    width: 60px;
+    height: 60px;
+  }
+  .container .job .job-card-wrapper .job-card .job-desc-wrapper h4 {
+    font-size: 13px;
+  }
+  .container .job .job-card-wrapper .job-card .job-desc-wrapper h5,
+  .container .job .job-card-wrapper .job-card .job-desc-wrapper p {
+    font-size: 12px;
+  }
+
+  .container .reviews .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  header {
+    padding: 0 30px;
+  }
+  header .nav_bar .logo {
+    padding: 13px 5px;
+  }
+  .container .hero {
+    flex-direction: column;
+  }
+  .container .hero > div:first-child {
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container .job {
+    padding: 50px 25px;
+  }
+
+  .container .reviews .review-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 20px;
+  }
+}
